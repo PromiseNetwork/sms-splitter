@@ -3,6 +3,8 @@ const mustache = require("mustache");
 
 type MustacheParts = Array<Array<string | number>>;
 
+const SMS_MAX_LENGTH = 160;
+
 function reconstruct(parts: MustacheParts, count): string {
   var mapped = parts.slice(0, count).map(part => {
     if (part[0] === "text") {
@@ -18,12 +20,12 @@ function reconstruct(parts: MustacheParts, count): string {
 function split(
   message: string,
   values: Object,
-  maxLength: number,
+  maxLength?: number,
   ellipses?: string
 ): Array<string> {
   const parts: MustacheParts = mustache.parse(message).slice();
   const customEllipses = ellipses === undefined ? " ..." : ellipses || "";
-  maxLength = maxLength - customEllipses.length;
+  maxLength = (maxLength || SMS_MAX_LENGTH) - customEllipses.length;
 
   // 'parts' is an array of arrays.  Each array specifies 4 items
   // 0: The type, either 'text' for simple text, or 'name' for a token
