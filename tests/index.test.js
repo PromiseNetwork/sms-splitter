@@ -40,9 +40,9 @@ it("should return an array with one string", () => {
   expect(ret.length).toBe(1);
 });
 
-it("should return an array with two strings", () => {
+it("should return an array with two strings using an ellipses", () => {
   const input = "Hello {{world}} how are {{you}}";
-  const ret = split(input, { world: "foo", you: "bar" }, 16);
+  const ret = split(input, { world: "foo", you: "bar" }, 16, " ...");
 
   expect(ret.length).toBe(2);
   expect(ret[0]).toBe("Hello foo ...");
@@ -51,7 +51,12 @@ it("should return an array with two strings", () => {
 
 it("should split the content of a token if it is longer than the entire allowed message", () => {
   const input = "Hello {{world}}";
-  const ret = split(input, { world: "supercalifragilisticexpialidocious" }, 20);
+  const ret = split(
+    input,
+    { world: "supercalifragilisticexpialidocious" },
+    20,
+    " ..."
+  );
 
   expect(ret.length).toBe(3);
   expect(ret[0]).toBe("Hello supercalif ...");

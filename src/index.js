@@ -24,7 +24,7 @@ function split(
   ellipses?: string
 ): Array<string> {
   const parts: MustacheParts = mustache.parse(message).slice();
-  const customEllipses = ellipses === undefined ? " ..." : ellipses || "";
+  const customEllipses = ellipses === undefined ? "" : ellipses || "";
   maxLength = (maxLength || SMS_MAX_LENGTH) - customEllipses.length;
 
   // 'parts' is an array of arrays.  Each array specifies 4 items
