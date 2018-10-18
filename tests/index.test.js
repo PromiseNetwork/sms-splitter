@@ -8,6 +8,23 @@ it("should return an array with one string for an empty string", () => {
   expect(ret[0]).toBe("");
 });
 
+it("should return an array with one string for a string with no tokens", () => {
+  const input = "This is a short message";
+  const ret = split(input);
+
+  expect(ret.length).toBe(1);
+  expect(ret[0]).toBe(input);
+});
+
+it("should return an array with two string for a string with no tokens", () => {
+  const input = "This is a short message";
+  const ret = split(input, null, 13, "");
+
+  expect(ret.length).toBe(2);
+  expect(ret[0]).toBe("This is a");
+  expect(ret[1]).toBe("short message");
+});
+
 it("should return an array with one string for a string of spaces", () => {
   const input = "  ";
   const ret = split(input, { world: "foo", you: "bar" }, 160);

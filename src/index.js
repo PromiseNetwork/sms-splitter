@@ -19,7 +19,7 @@ function reconstruct(parts: MustacheParts, count): string {
 
 function split(
   message: string,
-  values: Object,
+  values?: Object,
   maxLength?: number,
   ellipses?: string
 ): Array<string> {
@@ -42,7 +42,7 @@ function split(
   while (parts.length > 0) {
     for (let i = parts.length; i > 0; i--) {
       const template = reconstruct(parts, i);
-      let result = mustache.render(template, values);
+      let result = mustache.render(template, values || {});
 
       if (result.length <= maxLength) {
         strings.push(result);
