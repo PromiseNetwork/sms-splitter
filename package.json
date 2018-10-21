@@ -1,7 +1,8 @@
 {
   "name": "sms-splitter",
   "version": "0.1.0",
-  "description": "Splits tokenized messages into multiple messages of a set length",
+  "description":
+    "Splits tokenized messages into multiple messages of a set length",
   "main": "lib/index.js",
   "scripts": {
     "build": "babel src/ -d lib/",
@@ -13,8 +14,7 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-flow": "^6.23.0",
-    "flow": "^0.2.3",
-    "flow-bin": "^0.82.0",
+    "flow-bin": "^0.83.0",
     "jest": "^23.6.0"
   },
   "dependencies": {
