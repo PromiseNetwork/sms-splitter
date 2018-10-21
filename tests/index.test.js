@@ -16,7 +16,7 @@ it("should return an array with one string for a string with no tokens", () => {
   expect(ret[0]).toBe(input);
 });
 
-it("should return an array with two string for a string with no tokens", () => {
+it("should return an array with two strings for a string with no tokens", () => {
   const input = "This is a short message";
   const ret = split(input, null, 13, "");
 
@@ -38,6 +38,7 @@ it("should return an array with one string", () => {
   const ret = split(input, { world: "foo", you: "bar" }, 160);
 
   expect(ret.length).toBe(1);
+  expect(ret[0]).toBe("Hello foo how are bar");
 });
 
 it("should return an array with two strings using an ellipses", () => {
