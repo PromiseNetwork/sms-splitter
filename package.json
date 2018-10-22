@@ -1,9 +1,17 @@
 {
   "name": "sms-splitter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description":
-    "Splits tokenized messages into multiple messages of a set length",
+    "Splits tokenized SMS messages into multiple messages of a set length",
   "main": "lib/index.js",
+  "homepage": "https://github.com/PromiseNetwork/sms-splitter",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PromiseNetwork/sms-splitter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/PromiseNetwork/sms-splitter/issues"
+  },
   "scripts": {
     "build": "babel src/ -d lib/",
     "prepublish": "yarn run build",
