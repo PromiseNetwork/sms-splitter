@@ -1,6 +1,6 @@
 {
   "name": "sms-splitter",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description":
     "Splits tokenized messages into multiple messages of a set length",
   "main": "lib/index.js",
@@ -11,6 +11,7 @@
   },
   "author": "Shane O'Sullivan",
   "license": "MIT",
+  "keywords": ["sms", "split", "splitter", "mustache", "template", "string"],
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-flow": "^6.23.0",
