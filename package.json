@@ -34,5 +34,8 @@
   },
   "dependencies": {
     "mustache": "^3.0.0"
+  },
+  "resolutions": {
+    "mem": "4.0.0"
   }
 }
